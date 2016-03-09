@@ -15,7 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MatrixMultiplication.cpp">
+    <ClCompile Include="MPIApp.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterWorkerMPIApp.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixMultiplicationMPIApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JacobiMPIApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
