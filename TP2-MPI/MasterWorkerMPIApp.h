@@ -1,20 +1,47 @@
-#include "MPIApp.h"
 #include <assert.h>
+#include <mpi.h>
+#include <stdint.h>
 
-class MasterWorkerMPIApp : public MPIApp
+class MasterWorkerMPIApp
 {
 public:
 
-    MasterWorkerMPIApp(int argc, char ** argv) :
-        MPIApp(argc, argv)
+    MasterWorkerMPIApp(int argc, char ** argv)
     {
+        // Initialize MPI
+        int flag;
+        MPI_Initialized(&flag);
+        if (!flag)
+        {
+            MPI_Init(&argc, &argv);
+        }
 
+        // Get number of running processes
+        int numProcesses;
+        MPI_Comm_size(MPI_COMM_WORLD, &numProcesses);
+        s_NumProcesses = static_cast<uint32_t>(numProcesses);
+
+        // Get ID of current process
+        int processID;
+        MPI_Comm_rank(MPI_COMM_WORLD, &processID);
+        s_CurrProcessID = static_cast<uint32_t>(processID);
     }
 
     void run()
     {
         // Execute appropriate code depending on process ID
         isMasterProcess() ? runMaster() : runWorker();
+    }
+
+    virtual ~MasterWorkerMPIApp()
+    {
+        // Finalize MPI
+        int flag;
+        MPI_Finalized(&flag);
+        if (!flag)
+        {
+            MPI_Finalize();
+        }
     }
 
 
@@ -57,8 +84,21 @@ protected:
         MPI_Recv(i_Buf, i_Count, i_Type, 0, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
 
+    static uint32_t numProcesses()
+    {
+        return s_NumProcesses;
+    }
+
+    static uint32_t currentProcessID()
+    {
+        return s_CurrProcessID;
+    }
+
 
 private:
+
+    static uint32_t s_NumProcesses;
+    static uint32_t s_CurrProcessID;
 
     static bool isMasterProcess()
     {

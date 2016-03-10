@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <iostream>
 
-uint32_t MPIApp::s_NumProcesses;
-uint32_t MPIApp::s_CurrProcessID;
+uint32_t MasterWorkerMPIApp::s_NumProcesses;
+uint32_t MasterWorkerMPIApp::s_CurrProcessID;
 
 class MatrixMultiplicationMPIApp : public MasterWorkerMPIApp
 {
@@ -18,7 +18,7 @@ public:
         {
             std::cerr << "ERROR: Expected a number of process that is a square number + 1, but had " 
                       << numProcesses() << std::endl;
-            abort();
+            MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
         }
     }
 
@@ -27,11 +27,9 @@ protected:
 
     void runMaster() override
     {
-        // Master process create matrices and dispatch work to workers processes
+        // Create matrix
         auto numElem = s_NumRows * s_NumRows;
         auto * matrix = new double[numElem];
-
-        // Create arbitrary matrix
         for (auto i = 0U; i < numElem; ++i)
         {
             matrix[i] = static_cast<double>(i);
