@@ -5,81 +5,94 @@
 #include <mpi.h>
 
 uint32_t    const MATRIX_SIZE = 20;
-uint32_t    const NUM_ELEM = MATRIX_SIZE * MATRIX_SIZE;
+uint32_t    const NUM_ELEM    = MATRIX_SIZE * MATRIX_SIZE;
 MPI_Request const ON_VACATION = std::numeric_limits<MPI_Request>().max();
 
-void printMatrix(double * i_Matrix, char const * i_Name, bool i_DoTranspose = false)
+void printMatrix(double * i_Matrix)
 {
-    std::cout << i_Name << ":" << std::endl;
+    static uint32_t k = 0;
+
+    std::cout << k << ":" << std::endl;
     for (auto y = 0; y < MATRIX_SIZE; ++y)
     {
         for (auto x = 0; x < MATRIX_SIZE; ++x)
         {
-            auto val = i_Matrix[i_DoTranspose ? x * MATRIX_SIZE + y : y * MATRIX_SIZE + x];
-            std::cout << std::setw(6) << val << " ";
+            std::cout << std::setw(6) << i_Matrix[y * MATRIX_SIZE + x] << " ";
         }
         std::cout << std::endl;
     }
     std::cout << std::endl;
+    ++k;
 }
 
-void sendJob(double      * i_MatrixA,
-             double      * i_MatrixBt,
-             double      * i_Results,
+void sendJob(double      * i_InMatrix,
+             double      * i_OutMatrix,
              double      * i_RowsBuf,
              MPI_Request * i_PendingRequests,
-             uint32_t      i_MatrixComponent,
              uint32_t      i_ProcessID)
 {
-    // Compute position in matrices where concerned rows are
-    auto row = i_MatrixComponent / MATRIX_SIZE;
-    auto col = i_MatrixComponent % MATRIX_SIZE;
-
     // Copy matrix rows in the row buffer
-    memcpy(i_RowsBuf, i_MatrixA + row * MATRIX_SIZE, MATRIX_SIZE * sizeof(double));
-    memcpy(i_RowsBuf + MATRIX_SIZE, i_MatrixBt + col * MATRIX_SIZE, MATRIX_SIZE * sizeof(double));
+    for (auto i = 0U; i < 3; ++i)
+    {
+        memcpy(i_RowsBuf + i * MATRIX_SIZE, 
+               i_InMatrix + (i_ProcessID + i - 1) * MATRIX_SIZE, 
+               MATRIX_SIZE * sizeof(double));
+    }
 
     // Send row buffers to worker
-    MPI_Send(i_RowsBuf, 2 * MATRIX_SIZE, MPI_DOUBLE, i_ProcessID, 0, MPI_COMM_WORLD);
+    MPI_Send(i_RowsBuf, 3 * MATRIX_SIZE, MPI_DOUBLE, i_ProcessID, 0, MPI_COMM_WORLD);
 
     // Post non-blocking receive to be ready for result reception
     MPI_Request request;
-    auto *      result = i_Results + i_MatrixComponent;
-    MPI_Irecv(result, 1, MPI_DOUBLE, i_ProcessID, MPI_ANY_TAG, MPI_COMM_WORLD, &request);
+    MPI_Irecv(i_OutMatrix + i_ProcessID * MATRIX_SIZE + 1, MATRIX_SIZE - 2, 
+              MPI_DOUBLE, i_ProcessID, MPI_ANY_TAG, MPI_COMM_WORLD, &request);
     i_PendingRequests[i_ProcessID - 1] = request;
 }
 
 void sendOnVacation(uint32_t i_ProcessID, MPI_Request * i_PendingRequests)
 {
-    double dummy[2 * MATRIX_SIZE];
-    MPI_Send(dummy, 2 * MATRIX_SIZE, MPI_DOUBLE, i_ProcessID, ON_VACATION, MPI_COMM_WORLD);
+    double dummy[3 * MATRIX_SIZE];
+    MPI_Send(dummy, 3 * MATRIX_SIZE, MPI_DOUBLE, i_ProcessID, ON_VACATION, MPI_COMM_WORLD);
     i_PendingRequests[i_ProcessID - 1] = ON_VACATION;
+}
+
+void tellWorkerTheresNoJobForHim(uint32_t i_ProcessID)
+{
+    double dummy[3 * MATRIX_SIZE];
+    MPI_Send(dummy, 3 * MATRIX_SIZE, MPI_DOUBLE, i_ProcessID, ON_VACATION, MPI_COMM_WORLD);
 }
 
 void runManager(uint32_t, uint32_t i_NumProc)
 {
-    // Create matrices
-    double matrixA[NUM_ELEM];
-    double matrixBt[NUM_ELEM];
-    double results[NUM_ELEM];
-    for (auto i = 0U; i < NUM_ELEM; ++i)
+    // Create initial matrices
+    double matrices[2][NUM_ELEM];
+    for (auto i = 0U; i < 2; ++i)
     {
-        // Fill with arbitrary values
-        matrixA[i] = static_cast<double>(i);
-        matrixBt[i] = -static_cast<double>(i) + NUM_ELEM;
+        auto * matrix = matrices[i];
+        for (auto y = 0U; y < MATRIX_SIZE; ++y)
+        {
+            matrix[y * MATRIX_SIZE] = -1.0;
+            matrix[y * MATRIX_SIZE + MATRIX_SIZE - 1] = -1.0;
+            auto rowValue = y == 0 || y == MATRIX_SIZE - 1 ? -1.0 : y;
+            for (auto x = 1U; x < MATRIX_SIZE - 1; ++x)
+            {
+                matrix[y * MATRIX_SIZE + x] = rowValue;
+            }
+        }
     }
 
     // Print input matrices
-    printMatrix(matrixA, "A");
-    printMatrix(matrixBt, "B", true);
+    printMatrix(matrices[0]);
+    printMatrix(matrices[1]);
 
     // Send a first job to each worker
-    double rowsBuf[2 * MATRIX_SIZE];
-    auto   numWorkers = std::min(i_NumProc - 1, NUM_ELEM);
-    auto   pendingRequests = new MPI_Request[i_NumProc];
+    bool   currMatrix = 0;
+    double rowsBuf[3 * MATRIX_SIZE];
+    auto   numWorkers = std::min(i_NumProc - 1, MATRIX_SIZE - 2);
+    auto   pendingRequests = new MPI_Request[numWorkers];
     for (auto i = 0U; i < numWorkers; ++i)
     {
-        sendJob(matrixA, matrixBt, results, rowsBuf, pendingRequests, i, i + 1);
+        sendJob(matrices[currMatrix], matrices[!currMatrix], rowsBuf, pendingRequests, i + 1);
     }
 
     // Send useless workers to vacation
@@ -140,11 +153,11 @@ void runWorker(uint32_t, uint32_t)
 {
     while (true)
     {
-        // Get matrix rows for dot product computation
-        double buf[2 * MATRIX_SIZE];
+        // Get 3 matrix rows for computation
+        double buf[3 * MATRIX_SIZE];
         MPI_Status status;
         MPI_Recv(buf, 2 * MATRIX_SIZE, MPI_DOUBLE, MANAGER_ID,
-            MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+                 MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
         // Check if there is no job left to do
         if (status.MPI_TAG == ON_VACATION)
@@ -152,16 +165,19 @@ void runWorker(uint32_t, uint32_t)
             return;
         }
 
-        // Dot product
-        auto result = 0.0;
-        for (auto i = 0U; i < MATRIX_SIZE; ++i)
+        // Actual computation
+        double results[MATRIX_SIZE - 2];
+        for (auto i = 1U; i < MATRIX_SIZE - 1; ++i)
         {
-            result += buf[i] * buf[i + MATRIX_SIZE];
+            results[i - 1] = (buf[i] +                         // UP
+                              buf[MATRIX_SIZE + i + 1] +       // RIGHT
+                              buf[2 * MATRIX_SIZE + i] +       // DOWN
+                              buf[MATRIX_SIZE + i - 1]) / 4.0; // LEFT
         }
 
         // Send result back
         MPI_Request dummy;
-        MPI_Isend(&result, 1, MPI_DOUBLE, MANAGER_ID, 0, MPI_COMM_WORLD, &dummy);
+        MPI_Isend(&results, MATRIX_SIZE - 2, MPI_DOUBLE, MANAGER_ID, 0, MPI_COMM_WORLD, &dummy);
     }
 }
 

@@ -129,9 +129,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="JacobiMPIApp.cpp" />
-    <ClCompile Include="MatrixMultiplicationMPIApp.cpp" />
+    <ClCompile Include="Jacobi.cpp" />
+    <ClCompile Include="MatrixMultiplication.cpp" />
     <ClCompile Include="MPIUtils.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MPIUtils.h" />
