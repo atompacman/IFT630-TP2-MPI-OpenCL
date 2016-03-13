@@ -18,6 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Jacobi.cpp" />
+    <ClCompile Include="MatrixMultiplication.cpp" />
+    <ClCompile Include="MPIUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MPIUtils.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{25533A26-97CD-4B94-A5A3-94383359FB47}</ProjectGuid>
     <RootNamespace>TP2MPI</RootNamespace>
@@ -128,14 +136,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="JacobiMPIApp.cpp" />
-    <ClCompile Include="MatrixMultiplicationMPIApp.cpp" />
-    <ClCompile Include="MPIUtils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MPIUtils.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

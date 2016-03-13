@@ -4,7 +4,7 @@
 #include <iostream>
 #include <mpi.h>
 
-uint32_t    const MATRIX_SIZE = 20;
+uint32_t    const MATRIX_SIZE = 10;
 uint32_t    const NUM_ELEM    = MATRIX_SIZE * MATRIX_SIZE;
 MPI_Request const ON_VACATION = std::numeric_limits<MPI_Request>().max();
 
@@ -131,7 +131,7 @@ void runManager(uint32_t, uint32_t i_NumProc)
     }
     
     // Print results
-    printMatrix(results, "AB", false, true);
+    printMatrix(results, "AB");
 
     delete[] pendingRequests;
 }
