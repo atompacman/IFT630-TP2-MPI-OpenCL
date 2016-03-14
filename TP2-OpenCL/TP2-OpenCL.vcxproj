@@ -85,6 +85,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,14 +114,25 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Encode.h" />
+    <ClInclude Include="OCLWrapper\Forces.h" />
+    <ClInclude Include="OCLWrapper\OCLBuffer.h" />
+    <ClInclude Include="OCLWrapper\OCLContext.h" />
+    <ClInclude Include="OCLWrapper\OCLKernel.h" />
+    <ClInclude Include="OCLWrapper\OCLProgram.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Encode.cpp" />
-    <ClCompile Include="Sequential.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="OCLWrapper\Forces.cpp" />
+    <ClCompile Include="OCLWrapper\OCLBuffer.cpp" />
+    <ClCompile Include="OCLWrapper\OCLContext.cpp" />
+    <ClCompile Include="OCLWrapper\OCLKernel.cpp" />
+    <ClCompile Include="OCLWrapper\OCLProgram.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

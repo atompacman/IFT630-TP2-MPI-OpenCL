@@ -5,4 +5,4 @@
 
 std::string encode(std::string const & i_PW);
 
-#endif
+#endif //ENCODE_IFT630

@@ -13,18 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\OCLWrapper">
+      <UniqueIdentifier>{57bafea2-40c1-4cc2-9b2c-9f2c2653430c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encode.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OCLWrapper\Forces.h">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="OCLWrapper\OCLBuffer.h">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="OCLWrapper\OCLContext.h">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="OCLWrapper\OCLKernel.h">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="OCLWrapper\OCLProgram.h">
+      <Filter>Source Files\OCLWrapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Encode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sequential.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OCLWrapper\OCLBuffer.cpp">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="OCLWrapper\OCLContext.cpp">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="OCLWrapper\OCLKernel.cpp">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="OCLWrapper\OCLProgram.cpp">
+      <Filter>Source Files\OCLWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="OCLWrapper\Forces.cpp">
+      <Filter>Source Files\OCLWrapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
