@@ -77,17 +77,28 @@ void runManager(uint32_t, uint32_t i_NumProc)
 
 	// Print matrix
 	printSquareMatrix(matrix, numRows, "Initial");
-
-	// Send rows to workers
-	for (auto y = 0U; y < numRows - 2; ++y)
+	double difference;
+	int iter = 0;
+	do
 	{
-		MPI_Send(matrix + y * numRows, 3 * numRows, MPI_DOUBLE, y, 0, MPI_COMM_WORLD);
-	}
+		++iter;
+		difference = 0.0;
+		// Send rows to workers
+		for (auto y = 0U; y < numRows - 2; ++y)
+		{
+			MPI_Send(matrix + y * numRows, 3 * numRows, MPI_DOUBLE, y+1, 0, MPI_COMM_WORLD);
+		}
 
-	/*
-	 *** Receive the results and deal with them here (and while loop with difference ?) ***
-	 */
+		for (auto y = 1U; y < numRows - 1; ++y)
+		{
+			MPI_Recv(matrix + 1 + y * numRows, numRows - 2, MPI_DOUBLE, y, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		}
+		std::cout << "Iteration #" << iter << std::endl;
+		std::cout << "Difference: " << difference << std::endl;
+		printSquareMatrix(matrix, numRows, "");
 
+		//*** Receive the results and deal with them here (and while loop with difference ?) ***
+	} while (difference > 1.0e-2);
 	delete[] matrix;
 }
 
@@ -100,6 +111,8 @@ void runWorker(uint32_t, uint32_t)
 	auto numRows = numProcesses + 1;
 	auto * input = new double[3 * numRows];
 	MPI_Recv(input, 3 * numRows, MPI_DOUBLE, 0, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+	//std::cout << *(input - (3 * numRows));
 
 	// Null input means computation is over
 	if (input == nullptr)
@@ -118,7 +131,7 @@ void runWorker(uint32_t, uint32_t)
 	}
 
 	// Send result back
-	MPI_Send(&result, numRows - 2, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+	MPI_Send(result, numRows - 2, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
 
 	delete[] input;
 }
