@@ -1,0 +1,672 @@
+# depslib dependency file v1.0
+1312916264 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLBuffer.cpp
+	"OCLBuffer.h"
+	"OCLContext.h"
+	"OCLProgram.h"
+	<QDebug>
+
+1314020620 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLBuffer.h
+	<CL/opencl.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/opencl.h
+	<OpenCL/cl.h>
+	<OpenCL/cl_gl.h>
+	<OpenCL/cl_gl_ext.h>
+	<OpenCL/cl_ext.h>
+	<CL/cl.h>
+	<CL/cl_gl.h>
+	<CL/cl_gl_ext.h>
+	<CL/cl_ext.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/cl.h
+	<OpenCL/cl_platform.h>
+	<CL/cl_platform.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/cl_platform.h
+	<AvailabilityMacros.h>
+	<stdint.h>
+	<stddef.h>
+	<altivec.h>
+	<intrin.h>
+	<xmmintrin.h>
+	<intrin.h>
+	<emmintrin.h>
+	<mmintrin.h>
+	<intrin.h>
+	<immintrin.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/cl_gl.h
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/cl_gl_ext.h
+	<OpenCL/cl_gl.h>
+	<CL/cl_gl.h>
+
+1439656764 /usr/local/cuda-7.5/include/CL/cl_ext.h
+	<OpenCL/cl.h>
+	<AvailabilityMacros.h>
+	<CL/cl.h>
+
+1458150513 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLContext.h
+	<CL/opencl.h>
+	<QList>
+	<QString>
+
+1379086312 /usr/include/qt4/QtCore/QList
+	"qlist.h"
+
+1379086312 /usr/include/qt4/QtCore/qlist.h
+	<QtCore/qiterator.h>
+	<QtCore/qatomic.h>
+	<QtCore/qalgorithms.h>
+	<iterator>
+	<list>
+	<iterator>
+	<initializer_list>
+	<new>
+	<limits.h>
+	<string.h>
+
+1379086312 /usr/include/qt4/QtCore/qiterator.h
+	<QtCore/qglobal.h>
+	<new>
+
+1432731229 /usr/include/qt4/QtCore/qglobal.h
+	<stddef.h>
+	<QtCore/qconfig.h>
+	<algorithm>
+	<AvailabilityMacros.h>
+	<utility>
+	<e32def.h>
+	<QtCore/qfeatures.h>
+
+1432731425 /usr/include/qt4/QtCore/qconfig.h
+
+1379086312 /usr/include/qt4/QtCore/qfeatures.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic.h
+	<QtCore/qglobal.h>
+	<QtCore/qbasicatomic.h>
+
+1379086312 /usr/include/qt4/QtCore/qbasicatomic.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic_bootstrap.h>
+	<QtCore/qatomic_arch.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_bootstrap.h
+
+1432731229 /usr/include/qt4/QtCore/qatomic_arch.h
+	"QtCore/qglobal.h"
+	"QtCore/qatomic_integrity.h"
+	"QtCore/qatomic_vxworks.h"
+	"QtCore/qatomic_alpha.h"
+	"QtCore/qatomic_arm.h"
+	"QtCore/qatomic_armv6.h"
+	"QtCore/qatomic_avr32.h"
+	"QtCore/qatomic_bfin.h"
+	"QtCore/qatomic_generic.h"
+	"QtCore/qatomic_i386.h"
+	"QtCore/qatomic_ia64.h"
+	"QtCore/qatomic_m68k.h"
+	"QtCore/qatomic_macosx.h"
+	"QtCore/qatomic_mips.h"
+	"QtCore/qatomic_parisc.h"
+	"QtCore/qatomic_powerpc.h"
+	"QtCore/qatomic_s390.h"
+	"QtCore/qatomic_sparc.h"
+	"QtCore/qatomic_windows.h"
+	"QtCore/qatomic_windowsce.h"
+	"QtCore/qatomic_x86_64.h"
+	"QtCore/qatomic_symbian.h"
+	"QtCore/qatomic_sh.h"
+	"QtCore/qatomic_sh4a.h"
+	"QtCore/qatomic_generic.h"
+	"QtCore/qatomic_aarch64.h"
+
+1379086312 /usr/include/qt4/QtCore/qatomic_integrity.h
+	<INTEGRITY.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_vxworks.h
+	<QtCore/qatomic_powerpc.h>
+	<vxWorksCommon.h>
+	<taskLib.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_powerpc.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_alpha.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_arm.h
+	"QtCore/qatomic_armv7.h"
+	"QtCore/qatomic_armv6.h"
+	"QtCore/qatomic_armv5.h"
+
+1379086312 /usr/include/qt4/QtCore/qatomic_armv7.h
+	"QtCore/qatomic_armv6.h"
+
+1379086312 /usr/include/qt4/QtCore/qatomic_armv6.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_armv5.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_avr32.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_bfin.h
+	<asm/fixed_code.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_generic.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_i386.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_ia64.h
+	<ia64intrin.h>
+	<ia64/sys/inline.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_m68k.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_macosx.h
+	<QtCore/qatomic_x86_64.h>
+	<QtCore/qatomic_i386.h>
+	<QtCore/qatomic_powerpc.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_x86_64.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_mips.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_parisc.h
+
+1432731229 /usr/include/qt4/QtCore/qatomic_s390.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_sparc.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_windows.h
+	"QtCore/qatomic_i386.h"
+	"QtCore/qatomic_x86_64.h"
+	<winbase.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_windowsce.h
+	<QtCore/qglobal.h>
+	"QtCore/qatomic_windows.h"
+
+1379086312 /usr/include/qt4/QtCore/qatomic_symbian.h
+	<QtCore/qglobal.h>
+	<e32std.h>
+
+1379086312 /usr/include/qt4/QtCore/qatomic_sh.h
+
+1379086312 /usr/include/qt4/QtCore/qatomic_sh4a.h
+
+1432731229 /usr/include/qt4/QtCore/qatomic_aarch64.h
+
+1379086312 /usr/include/qt4/QtCore/qalgorithms.h
+	<QtCore/qglobal.h>
+
+1379086312 /usr/include/qt4/QtCore/QString
+	"qstring.h"
+
+1379086312 /usr/include/qt4/QtCore/qstring.h
+	<QtCore/qchar.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qatomic.h>
+	<QtCore/qnamespace.h>
+	<Qt3Support/q3cstring.h>
+	<string>
+	<stdarg.h>
+	<QtCore/qstringbuilder.h>
+
+1379086312 /usr/include/qt4/QtCore/qchar.h
+	<QtCore/qglobal.h>
+
+1379086312 /usr/include/qt4/QtCore/qbytearray.h
+	<QtCore/qatomic.h>
+	<QtCore/qnamespace.h>
+	<string.h>
+	<stdarg.h>
+	<QtCore/qstring.h>
+
+1379086312 /usr/include/qt4/QtCore/qnamespace.h
+	<QtCore/qglobal.h>
+
+1379086313 /usr/include/qt4/Qt3Support/q3cstring.h
+	<QtCore/qbytearray.h>
+
+1379086312 /usr/include/qt4/QtCore/qstringbuilder.h
+	<QtCore/qstring.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qmap.h>
+	<string.h>
+
+1379086312 /usr/include/qt4/QtCore/qmap.h
+	<QtCore/qatomic.h>
+	<QtCore/qiterator.h>
+	<QtCore/qlist.h>
+	<map>
+	<new>
+
+1458150140 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLProgram.h
+	"OCLContext.h"
+	"OCLBuffer.h"
+	<CL/opencl.h>
+	<QList>
+	<QHash>
+
+1432731229 /usr/include/qt4/QtCore/QHash
+	"qhash.h"
+
+1432731229 /usr/include/qt4/QtCore/qhash.h
+	<QtCore/qatomic.h>
+	<QtCore/qchar.h>
+	<QtCore/qiterator.h>
+	<QtCore/qlist.h>
+	<QtCore/qpair.h>
+
+1379086312 /usr/include/qt4/QtCore/qpair.h
+	<QtCore/qdatastream.h>
+
+1379086312 /usr/include/qt4/QtCore/qdatastream.h
+	<QtCore/qscopedpointer.h>
+	<QtCore/qiodevice.h>
+	<QtCore/qglobal.h>
+
+1379086312 /usr/include/qt4/QtCore/qscopedpointer.h
+	<QtCore/qglobal.h>
+
+1379086312 /usr/include/qt4/QtCore/qiodevice.h
+	<QtCore/qobject.h>
+	<QtCore/qobjectdefs.h>
+	<QtCore/qscopedpointer.h>
+	<QtCore/qstring.h>
+
+1379086312 /usr/include/qt4/QtCore/qobject.h
+	<QtCore/qobjectdefs.h>
+	<QtCore/qstring.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qlist.h>
+	<QtCore/qcoreevent.h>
+	<QtCore/qscopedpointer.h>
+
+1379086312 /usr/include/qt4/QtCore/qobjectdefs.h
+	<QtCore/qnamespace.h>
+
+1379086312 /usr/include/qt4/QtCore/qcoreevent.h
+	<QtCore/qnamespace.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qobjectdefs.h>
+
+1379086312 /usr/include/qt4/QtCore/QDebug
+	"qdebug.h"
+
+1379086312 /usr/include/qt4/QtCore/qdebug.h
+	<QtCore/qalgorithms.h>
+	<QtCore/qhash.h>
+	<QtCore/qlist.h>
+	<QtCore/qmap.h>
+	<QtCore/qpair.h>
+	<QtCore/qtextstream.h>
+	<QtCore/qstring.h>
+	<QtCore/qvector.h>
+	<QtCore/qset.h>
+	<QtCore/qcontiguouscache.h>
+
+1379086312 /usr/include/qt4/QtCore/qtextstream.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstring.h>
+	<QtCore/qchar.h>
+	<QtCore/qlocale.h>
+	<QtCore/qscopedpointer.h>
+	<QtCore/qtextcodec.h>
+	<stdio.h>
+
+1379086312 /usr/include/qt4/QtCore/qlocale.h
+	<QtCore/qvariant.h>
+	<QtCore/qstring.h>
+	<QtCore/qobjectdefs.h>
+
+1379086312 /usr/include/qt4/QtCore/qvariant.h
+	<QtCore/qatomic.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qlist.h>
+	<QtCore/qmetatype.h>
+	<QtCore/qmap.h>
+	<QtCore/qhash.h>
+	<QtCore/qstring.h>
+
+1379086312 /usr/include/qt4/QtCore/qmetatype.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<QtCore/qdatastream.h>
+
+1379086312 /usr/include/qt4/QtCore/qtextcodec.h
+	<QtCore/qstring.h>
+	<QtCore/qlist.h>
+
+1379086312 /usr/include/qt4/QtCore/qvector.h
+	<QtCore/qiterator.h>
+	<QtCore/qatomic.h>
+	<QtCore/qalgorithms.h>
+	<QtCore/qlist.h>
+	<iterator>
+	<vector>
+	<stdlib.h>
+	<string.h>
+	<initializer_list>
+	<QtCore/QPointF>
+	<QtCore/QPoint>
+
+1379086312 /usr/include/qt4/QtCore/QPointF
+	"qpoint.h"
+
+1379086312 /usr/include/qt4/QtCore/qpoint.h
+	<QtCore/qnamespace.h>
+
+1379086312 /usr/include/qt4/QtCore/QPoint
+	"qpoint.h"
+
+1379086312 /usr/include/qt4/QtCore/qset.h
+	<QtCore/qhash.h>
+
+1379086312 /usr/include/qt4/QtCore/qcontiguouscache.h
+	<QtCore/qatomic.h>
+	<limits.h>
+	<new>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLContext.cpp
+	"OCLContext.h"
+	<QDebug>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLKernel.cpp
+	"OCLKernel.h"
+	"OCLBuffer.h"
+	"OCLProgram.h"
+	"OCLContext.h"
+	<QDebug>
+
+1458150134 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLKernel.h
+	<QString>
+	<CL/opencl.h>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/OCLWrapper/OCLProgram.cpp
+	"OCLProgram.h"
+	"OCLKernel.h"
+	<QDebug>
+	<QFile>
+	<QString>
+	<QTextStream>
+
+1379086312 /usr/include/qt4/QtCore/QFile
+	"qfile.h"
+
+1379086312 /usr/include/qt4/QtCore/qfile.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstring.h>
+	<stdio.h>
+	<f32file.h>
+
+1379086312 /usr/include/qt4/QtCore/QTextStream
+	"qtextstream.h"
+
+1458162217 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/Host.cpp
+	"OCLKernel.h"
+	"OCLProgram.h"
+	<iostream>
+
+1458150140 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLProgram.h
+	"OCLContext.h"
+	"OCLBuffer.h"
+	<CL/opencl.h>
+	<QList>
+	<QHash>
+
+1458150513 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLContext.h
+	<CL/opencl.h>
+	<QList>
+	<QString>
+
+1314020620 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLBuffer.h
+	<CL/opencl.h>
+
+1312916264 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLBuffer.cpp
+	"OCLBuffer.h"
+	"OCLContext.h"
+	"OCLProgram.h"
+	<QDebug>
+
+1458155716 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLContext.cpp
+	"OCLContext.h"
+	<QDebug>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLKernel.cpp
+	"OCLKernel.h"
+	"OCLBuffer.h"
+	"OCLProgram.h"
+	"OCLContext.h"
+	<QDebug>
+
+1458150134 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLKernel.h
+	<QString>
+	<CL/opencl.h>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCLCodeCocks/TP2-OpenCL/OCLProgram.cpp
+	"OCLProgram.h"
+	"OCLKernel.h"
+	<QDebug>
+	<QFile>
+	<QString>
+	<QTextStream>
+
+1458148956 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/Common/Encode.cpp
+	"Encode.h"
+
+1458148344 /home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/Common/Encode.h
+	<string>
+
+1458227950 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/Host.cpp
+	"OCLWrapper/OCLKernel.h"
+	"OCLWrapper/OCLProgram.h"
+	"Encode.h"
+	<iostream>
+
+1458227337 /home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.h
+	<QString>
+	<opencl.h>
+
+1418320999 /usr/include/hwloc/opencl.h
+	<hwloc.h>
+	<hwloc/autogen/config.h>
+	<hwloc/helper.h>
+	<hwloc/linux.h>
+	<CL/cl.h>
+	<CL/cl_ext.h>
+	<stdio.h>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/cl.h
+	<OpenCL/cl_platform.h>
+	<CL/cl_platform.h>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/cl_platform.h
+	<AvailabilityMacros.h>
+	<stdint.h>
+	<stddef.h>
+	<altivec.h>
+	<intrin.h>
+	<xmmintrin.h>
+	<intrin.h>
+	<emmintrin.h>
+	<mmintrin.h>
+	<intrin.h>
+	<immintrin.h>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/cl_ext.h
+	<OpenCL/cl.h>
+	<AvailabilityMacros.h>
+	<CL/cl.h>
+
+1458150140 /home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.h
+	"OCLContext.h"
+	"OCLBuffer.h"
+	<CL/opencl.h>
+	<QList>
+	<QHash>
+
+1458150513 /home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.h
+	<CL/opencl.h>
+	<QList>
+	<QString>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/opencl.h
+	<OpenCL/cl.h>
+	<OpenCL/cl_gl.h>
+	<OpenCL/cl_gl_ext.h>
+	<OpenCL/cl_ext.h>
+	<CL/cl.h>
+	<CL/cl_gl.h>
+	<CL/cl_gl_ext.h>
+	<CL/cl_ext.h>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/cl_gl.h
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1439656764 /usr/local/cuda-7.5/targets/x86_64-linux/include/CL/cl_gl_ext.h
+	<OpenCL/cl_gl.h>
+	<CL/cl_gl.h>
+
+1314020620 /home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.h
+	<CL/opencl.h>
+
+1312916264 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.cpp
+	"OCLBuffer.h"
+	"OCLContext.h"
+	"OCLProgram.h"
+	<QDebug>
+
+1458227814 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.cpp
+	"OCLContext.h"
+	<QDebug>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.cpp
+	"OCLKernel.h"
+	"OCLBuffer.h"
+	"OCLProgram.h"
+	"OCLContext.h"
+	<QDebug>
+
+1458227654 source:/home/local/USHERBROOKE/couj2519/Lecteurs_Reseau/Personnel/HIV16/IFT630/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.cpp
+	"OCLProgram.h"
+	"OCLKernel.h"
+	<QDebug>
+	<QFile>
+	<QString>
+	<QTextStream>
+
+1458148956 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/Common/Encode.cpp
+	"Encode.h"
+
+1458148344 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/Common/Encode.h
+	<string>
+
+1458231405 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/Host.cpp
+	"OCLWrapper/OCLKernel.h"
+	"OCLWrapper/OCLProgram.h"
+	"Encode.h"
+	<iostream>
+
+1458230333 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.h
+	<QString>
+	<CL/opencl.h>
+
+1458150140 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.h
+	"OCLContext.h"
+	"OCLBuffer.h"
+	<CL/opencl.h>
+	<QList>
+	<QHash>
+
+1458150513 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.h
+	<CL/opencl.h>
+	<QList>
+	<QString>
+
+1314020620 /home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.h
+	<CL/opencl.h>
+
+1312916264 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.cpp
+	"OCLBuffer.h"
+	"OCLContext.h"
+	"OCLProgram.h"
+	<QDebug>
+
+1458227814 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.cpp
+	"OCLContext.h"
+	<QDebug>
+
+1458148344 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.cpp
+	"OCLKernel.h"
+	"OCLBuffer.h"
+	"OCLProgram.h"
+	"OCLContext.h"
+	<QDebug>
+
+1458227654 source:/home/local/USHERBROOKE/couj2519/IFT630-TP2-MPI-OpenCL/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.cpp
+	"OCLProgram.h"
+	"OCLKernel.h"
+	<QDebug>
+	<QFile>
+	<QString>
+	<QTextStream>
+
+1458344900 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/Common/Encode.cpp
+	"Encode.h"
+
+1458338739 /home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/Common/Encode.h
+	<string>
+
+1458584461 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/Host.cpp
+	"OCLWrapper/OCLKernel.h"
+	"OCLWrapper/OCLProgram.h"
+	"Encode.h"
+	<iostream>
+
+1458316026 /home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.h
+	<QString>
+	<CL/opencl.h>
+
+1458150140 /home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.h
+	"OCLContext.h"
+	"OCLBuffer.h"
+	<CL/opencl.h>
+	<QList>
+	<QHash>
+
+1458150513 /home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.h
+	<CL/opencl.h>
+	<QList>
+	<QString>
+
+1314020620 /home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.h
+	<CL/opencl.h>
+
+1312916264 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLBuffer.cpp
+	"OCLBuffer.h"
+	"OCLContext.h"
+	"OCLProgram.h"
+	<QDebug>
+
+1458227814 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLContext.cpp
+	"OCLContext.h"
+	<QDebug>
+
+1458317205 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLKernel.cpp
+	"OCLKernel.h"
+	"OCLBuffer.h"
+	"OCLProgram.h"
+	"OCLContext.h"
+	<QDebug>
+
+1458348620 source:/home/local/USHERBROOKE/couj2519/TP2/TP2-OpenCL/OpenCL/src/OCLWrapper/OCLProgram.cpp
+	"OCLProgram.h"
+	"OCLKernel.h"
+	<QDebug>
+	<QFile>
+	<QString>
+	<QTextStream>
+
