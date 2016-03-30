@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Jacobi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MatrixMultiplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MPIUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JacobiMethod.cpp">
+    <ClCompile Include="Jacobi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

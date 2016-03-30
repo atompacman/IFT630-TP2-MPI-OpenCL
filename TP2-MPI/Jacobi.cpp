@@ -5,7 +5,7 @@
 #include <mpi.h>
 #include <cmath>
 
-uint32_t    const NUM_ROWS = 10;
+uint32_t    const NUM_ROWS = 4;
 MPI_Request const ON_VACATION = std::numeric_limits<MPI_Request>().max();
 
 static void printSquareMatrix(double * i_Matrix, char const * i_Name)

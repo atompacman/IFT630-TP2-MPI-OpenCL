@@ -40,13 +40,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -118,21 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Encode.h" />
-    <ClInclude Include="OCLWrapper\Forces.h" />
-    <ClInclude Include="OCLWrapper\OCLBuffer.h" />
-    <ClInclude Include="OCLWrapper\OCLContext.h" />
-    <ClInclude Include="OCLWrapper\OCLKernel.h" />
-    <ClInclude Include="OCLWrapper\OCLProgram.h" />
+    <ClCompile Include="..\Common\Encode.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Encode.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="OCLWrapper\Forces.cpp" />
-    <ClCompile Include="OCLWrapper\OCLBuffer.cpp" />
-    <ClCompile Include="OCLWrapper\OCLContext.cpp" />
-    <ClCompile Include="OCLWrapper\OCLKernel.cpp" />
-    <ClCompile Include="OCLWrapper\OCLProgram.cpp" />
+    <ClInclude Include="..\Common\Encode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

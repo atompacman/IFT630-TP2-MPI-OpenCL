@@ -1,10 +1,11 @@
-#include "Encode.h"
+#include "../Common/Encode.h"
+#include "../Common/Time.h"
 #include <algorithm>
 #include <condition_variable>
 #include <thread>
 
 // The word the program looks for
-auto const SOLUTION = "aeremie";
+auto const SOLUTION = "jeremy";
 
 // Encoded message we want to obtain after applying the encoding algorithm on possible solutions
 auto const ENCODED = encode(SOLUTION);
@@ -13,7 +14,7 @@ auto const ENCODED = encode(SOLUTION);
 auto const LENGTH = ENCODED.length();
 
 // Number of worker threads performing a brute-force attack on the encoding algorithm
-auto const NUM_WORKERS = 4U;
+auto const NUM_WORKERS = 13U;
 
 // Array of solutions found (one entry per worker thread)
 std::string g_Solutions[NUM_WORKERS];
@@ -77,6 +78,9 @@ void worker(char i_FirstLetter, char i_LastLetter, uint16_t i_ID)
 
 int main()
 {
+	// Initial time
+	auto start = std::chrono::steady_clock::now();
+
     // Run a sequential program if number of worker is 1
     if (NUM_WORKERS == 1)
     {
@@ -109,4 +113,8 @@ int main()
         std::unique_lock<std::mutex> lock(mutex);
         g_SolutionIsFound.wait(lock);
     }
+
+	// Print time
+	using namespace std::chrono;
+	printf("Wall Time : %d ms\n", duration_cast<milliseconds>(steady_clock::now() - start).count());
 }
